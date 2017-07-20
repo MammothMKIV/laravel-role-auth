@@ -24,3 +24,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/administrator', 'AdminController@index')->name('admin_dashboard');
 Route::get('/moderator', 'ModeratorController@index')->name('moderator_dashboard');
 Route::get('/member', 'MemberController@index')->name('member_dashboard');
+Route::post('/upload', 'FileUpload@doUpload')->name('file_upload');
