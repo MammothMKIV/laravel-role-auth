@@ -25,3 +25,7 @@ Route::get('/administrator', 'AdminController@index')->name('admin_dashboard');
 Route::get('/moderator', 'ModeratorController@index')->name('moderator_dashboard');
 Route::get('/member', 'MemberController@index')->name('member_dashboard');
 Route::post('/upload', 'FileUpload@doUpload')->name('file_upload');
+Route::get('/submit-image', 'FileUpload@uploadImage')->name('image_upload_form');
+Route::post('/submit-image', 'FileUpload@doUploadImage')->name('image_upload');
+Route::get('/visits', 'VisitController@visitStats')->name('visit_stats');
+Route::get('/visit-data', 'VisitController@visitData')->name('visit_stats');

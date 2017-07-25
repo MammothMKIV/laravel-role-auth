@@ -20,3 +20,23 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+console.log(1232131);
+
+var $visitChart = $('#visitChart');
+
+if ($visitChart.length) {
+    $.ajax('/visit-data').done(function(data) {
+        var chartContainer = document.getElementById("visitChart"),
+            visitChart = new Chart(chartContainer, {
+                type: 'bar',
+                data: {
+                    labels: data.visitDataKeys,
+                    datasets: [{
+                        label: '# of Visits',
+                        data: data.visitDataValues
+                    }]
+                }
+            });
+    });
+}
